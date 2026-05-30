@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({
   origin: [
     "http://localhost:5173",                       // dev
-    "https://assignment8-nalpind.vercel.app",          // <-- your Vercel URL (after Step D)
+    "https://assignment8-nalpind-d2tlrz4j1-nalpind-project.vercel.app",          // <-- your Vercel URL (after Step D)
     /\.vercel\.app$/,                              // optional: preview branches
   ],
   credentials: true,
