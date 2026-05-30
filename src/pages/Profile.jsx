@@ -38,7 +38,7 @@ function Profile() {
     const token = localStorage.getItem("token");
 
     try {
-      await fetch(`${baseUrl}/api/plates`, {
+      await fetch(`${baseUrl}/api/logout`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

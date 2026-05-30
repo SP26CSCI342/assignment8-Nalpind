@@ -40,7 +40,7 @@ function LoginForm() {
     }
 
     try {
-      const response = await fetch(`${baseUrl}/api/plates`, {
+      const response = await fetch(`${baseUrl}/api/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
