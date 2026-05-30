@@ -13,6 +13,9 @@ function SignupForm() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
+
   const validateInputs = () => {
     if (!username || username.trim().length < 3) {
       return "Username must be at least 3 characters.";
@@ -39,7 +42,7 @@ function SignupForm() {
     }
 
     try {
-      const response = await fetch("/api/register", {
+      const response = await fetch(`${baseUrl}/api/plates`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),

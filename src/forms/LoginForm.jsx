@@ -13,6 +13,7 @@ function LoginForm() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
   // TODO: If the user is already logged in, skip the form.
   //   - Check  localStorage.getItem("token")  here (NOT "User" like A6).
   //   - If a token is present, navigate("/profile") and return.
@@ -39,7 +40,7 @@ function LoginForm() {
     }
 
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch(`${baseUrl}/api/plates`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
